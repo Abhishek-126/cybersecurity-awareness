@@ -1,0 +1,170 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background-color: rgba(43, 45, 66, 1)    ;
+    padding: 10px 20px;  /* Reduced padding */
+    color: #ffffff;
+    text-align: center;
+}
+
+header .logo h1 {
+    font-size: 2.5rem;  /* Reduced font size */
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;  /* Reduced padding */
+}
+
+nav ul li {
+    margin: 0 15px;  /* Reduced spacing between menu items */
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px;  /* Reduced padding */
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    background-color: #ff4757;
+    border-radius: 20px;
+    padding: 5px 15px;  /* Reduced padding */
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(rgba(43, 45, 66, 0.7), rgba(43, 45, 66, 0.7)), url('https://cdn.pixabay.com/photo/2018/05/14/16/25/cyber-security-3400657_1280.jpg') no-repeat center center/cover;
+    height: 60vh;  /* Reduced height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;  /* Reduced padding */
+}
+
+.hero h2 {
+    font-size: 2.5rem;  /* Reduced font size */
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero p {
+    font-size: 1.2rem;  /* Reduced font size */
+    margin-bottom: 20px;  /* Reduced spacing */
+    font-family: 'Roboto', sans-serif;
+}
+
+.hero .btn {
+    background-color: #ef233c;
+    color: white;
+    padding: 10px 20px;  /* Reduced padding */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #d90429;
+}
+
+/* Info cards section */
+.info-cards {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;  /* Reduced padding */
+    background-color: #edf2f4;
+}
+
+.info-cards .card {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 28%;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.info-cards .card:hover {
+    transform: translateY(-10px);
+}
+
+.info-cards .card h3 {
+    font-size: 1.6rem;  /* Reduced font size */
+    margin-bottom: 10px;  /* Reduced spacing */
+    font-family: 'Poppins', sans-serif;
+    color: #2b2d42;
+}
+
+.info-cards .card p {
+    font-size: 1rem;  /* Reduced font size */
+    margin-bottom: 15px;  /* Reduced spacing */
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+.info-cards .card-btn {
+    background-color: #ef233c;
+    color: white;
+    padding: 8px 15px;  /* Reduced padding */
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.info-cards .card-btn:hover {
+    background-color: #d90429;
+}
+
+/* Footer styles */
+footer {
+    background-color: #2b2d42;
+    color: white;
+    padding: 20px 0;  /* Reduced padding */
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .info-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-cards .card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
