@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search - Cyber Security Awareness</title>
+  <style>
+    
+      body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header styles (same across all pages) */
+header {
+    background-color: #2b2d42;
+    padding: 10px 10px;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    background-color: #ff4757; /* Red hover effect */
+}
+/* Footer styles (same across all pages) */
+footer {
+    background-color: #2b2d42;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form .container {
+        padding: 15px;
+    }
+
+    .contact-hero h2 {
+        font-size: 2rem;
+    }
+}
+
+
+.container {
+  width: 90%;
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+textarea {
+  width: 100%;
+  max-width: 600px; /* Set max width */
+  height: 120px; /* Fixed height */
+  max-height: 120px; /* Ensure it does not expand beyond this */
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none; /* Disable resizing of the textarea */
+}
+
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #2b2d42;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff4757;
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #eee;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="threats.html">Threats</a></li>
+            <li><a href="protection.html">Protection</a></li>
+            <li><a href="laws.html">Laws</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="search.html" class="active">Search</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+  <div class="container">
+    <h1>Search</h1>
+    <textarea id="userInput" placeholder="Paste message or describe your issue..."></textarea>
+    <button onclick="analyzeText()">Check Safety</button>
+    <div id="result" class="result-box"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 CyberSafe. All Rights Reserved.</p>
+</footer>
+
+  <script>
+      function analyzeText() {
+  const input = document.getElementById("userInput").value.toLowerCase();
+  const resultBox = document.getElementById("result");
+  let status = "Unknown";
+  let threatType = "Undetermined";
+  let description = "Not enough context to determine threat.";
+  let solution = "Please provide more detailed information.";
+
+  // === SAFE PATTERNS (Legitimate Notifications) ===
+  // Order matters: more specific patterns should be placed before less specific ones.
+  const safePatterns = [
+    {
+      // Dedicated safe pattern for LinkedIn notifications.
+      keywords: ["linkedin", "profile updated", "linkedin profile", "linkedin team"],
+      label: "LinkedIn Profile Update Notification",
+      status: "Safe",
+      description: "This appears to be a legitimate LinkedIn profile update notification.",
+      solution: "No action needed. If you did not make these changes, secure your account immediately."
+    },
+    {
+      // Dedicated safe pattern for Microsoft Office notifications.
+      keywords: ["microsoft office", "office 365", "subscription will be renewed", "microsoft office support", "office.com", "billing details"],
+      label: "Microsoft Office Subscription Renewal Notification",
+      status: "Safe",
+      description: "This appears to be a legitimate notification regarding your Microsoft Office 365 subscription.",
+      solution: "No action needed. Check your Microsoft account for further details."
+    },
+    {
+      keywords: ["new software release", "software update", "update you on", "major improvements", "download new version", "rolling out"],
+      label: "Software Update Notification",
+      status: "Safe",
+      description: "This message is a legitimate software update announcement.",
+      solution: "No action needed. Enjoy the new software release."
+    },
+    {
+      keywords: ["spotify", "premium membership", "membership has been", "successfully renewed", "subscription", "renewal", "update your payment method", "spotify team"],
+      label: "Spotify Subscription Renewal Notification",
+      status: "Safe",
+      description: "This appears to be a legitimate notification regarding your Spotify subscription.",
+      solution: "No action needed. Your subscription is active."
+    },
+    {
+      keywords: ["google drive", "storage plan", "successfully updated", "you now have", "google drive team"],
+      label: "Google Drive Storage Update Notification",
+      status: "Safe",
+      description: "This appears to be a legitimate notification from Google Drive regarding your storage plan.",
+      solution: "No action needed. Check your Google Drive account for details."
+    },
+    {
+      keywords: ["netflix", "subscription", "renewed", "premium", "account updated", "netflix team"],
+      label: "Netflix Subscription Notification",
+      status: "Safe",
+      description: "This appears to be a legitimate Netflix notification regarding your account or subscription update.",
+      solution: "No action needed. Verify with Netflix if needed."
+    },
+    {
+      keywords: ["jio", "recharge", "subscription updated", "account", "thanks for choosing", "jio team"],
+      label: "Jio Account Notification",
+      status: "Safe",
+      description: "This appears to be a legitimate notification regarding your Jio account or subscription.",
+      solution: "No action needed. Confirm with official Jio communications if necessary."
+    },
+    {
+      keywords: ["apple store", "order", "successfully processed", "tracking number", "order shipped", "apple store customer", "apple team"],
+      label: "Apple Store Order Confirmation",
+      status: "Safe",
+      description: "This appears to be a legitimate order confirmation from the Apple Store.",
+      solution: "No action needed. Check your Apple Store account for details."
+    },
+    {
+      keywords: ["amazon", "order confirmation", "order has been", "shipped", "tracking number", "amazon team", "your order"],
+      label: "Amazon Order Confirmation",
+      status: "Safe",
+      description: "This appears to be a legitimate order confirmation from Amazon.",
+      solution: "No action needed. Check your Amazon account for details."
+    },
+    {
+      keywords: ["ebay", "order confirmed", "your order", "order has been", "shipped", "ebay team"],
+      label: "eBay Order Confirmation",
+      status: "Safe",
+      description: "This appears to be a legitimate order confirmation from eBay.",
+      solution: "No action needed. Verify the details in your eBay account."
+    },
+    {
+      keywords: ["walmart", "order confirmation", "order has been", "shipped", "tracking number", "walmart team", "your order"],
+      label: "Walmart Order Confirmation",
+      status: "Safe",
+      description: "This appears to be a legitimate order confirmation from Walmart.",
+      solution: "No action needed. Check your Walmart account for updates."
+    },
+    {
+      keywords: ["best buy", "order confirmation", "order has been", "shipped", "tracking number", "best buy team"],
+      label: "Best Buy Order Confirmation",
+      status: "Safe",
+      description: "This appears to be a legitimate order confirmation from Best Buy.",
+      solution: "No action needed. Verify your order details via Best Buy."
+    },// Additional Safe Patterns
+    {
+      keywords: ["connection request", "linkedin connection", "sent you an invitation", "linkedin invite"],
+      label: "LinkedIn Connection Request",
+      status: "Safe",
+      description: "This appears to be a legitimate LinkedIn connection request notification.",
+      solution: "No action needed. If you did not send or accept this request, you can ignore it."
+    },
+    {
+      keywords: ["google account", "security alert", "login attempt", "new device", "google security"],
+      label: "Google Account Security Alert",
+      status: "Safe",
+      description: "This is a legitimate security alert regarding a login attempt on your Google account.",
+      solution: "If this was not you, follow the steps in the alert to secure your account."
+    },
+    {
+      keywords: ["facebook login", "new device", "login from", "facebook security alert"],
+      label: "Facebook Login Alert",
+      status: "Safe",
+      description: "This appears to be a legitimate Facebook login alert.",
+      solution: "If you didn't make this login, please secure your Facebook account."
+    },
+    {
+      keywords: ["instagram password reset", "reset your password", "request to reset", "instagram support"],
+      label: "Instagram Password Reset Request",
+      status: "Safe",
+      description: "This is a legitimate request to reset your Instagram password.",
+      solution: "If you requested the reset, follow the instructions. If not, report it to Instagram support."
+    },
+    {
+      keywords: ["twitter account activity", "login attempt", "new device", "twitter support"],
+      label: "Twitter Account Activity Notification",
+      status: "Safe",
+      description: "This is a legitimate notification regarding your Twitter account activity.",
+      solution: "If this wasn't you, secure your account by changing your password."
+    },
+    {
+      keywords: ["slack message", "new notification", "you've been mentioned", "slack team"],
+      label: "Slack Message/Notification",
+      status: "Safe",
+      description: "This appears to be a legitimate Slack notification for a new message or mention.",
+      solution: "No action needed. Check your Slack workspace for the new messages."
+    },
+    {
+      keywords: ["zoom meeting", "meeting invite", "zoom.us", "join the meeting"],
+      label: "Zoom Meeting Invitation",
+      status: "Safe",
+      description: "This is a legitimate Zoom meeting invitation.",
+      solution: "If you were expecting this invite, you can join the meeting using the link provided."
+    },
+    {
+      keywords: ["dropbox storage", "storage plan", "plan updated", "dropbox team"],
+      label: "Dropbox Storage Plan Update",
+      status: "Safe",
+      description: "This appears to be a legitimate notification from Dropbox about your storage plan.",
+      solution: "No action needed. Check your Dropbox account for details."
+    },
+    {
+      keywords: ["paypal transaction", "receipt", "payment received", "paypal team"],
+      label: "Paypal Transaction Receipt",
+      status: "Safe",
+      description: "This appears to be a legitimate PayPal transaction receipt for a recent payment.",
+      solution: "No action needed. Verify the transaction details in your PayPal account."
+    },
+    {
+      keywords: ["amazon prime", "membership renewed", "subscription renewed", "amazon team"],
+      label: "Amazon Prime Subscription Renewal",
+      status: "Safe",
+      description: "This appears to be a legitimate Amazon Prime membership renewal notification.",
+      solution: "No action needed. Your Amazon Prime membership is active."
+    },
+    {
+      keywords: ["amazon prime", "membership has been renewed", "your prime membership", "amazon team", "billing statement", "free shipping", "prime video", "amazon.com/your-account"],
+      label: "Amazon Prime Membership Renewal Notification",
+      status: "Safe",
+      description: "This appears to be a legitimate notification regarding your Amazon Prime membership renewal.",
+      solution: "No action needed. Your Amazon Prime subscription is active."
+    },
+    {
+      keywords: ["apple store", "order has shipped", "tracking number", "apple support", "thank you for your purchase", "order number"],
+      label: "Apple Store Order Confirmation",
+      status: "Safe",
+      description: "This appears to be a legitimate order confirmation from the Apple Store.",
+      solution: "No action needed. Check your Apple Store account for details."
+    }
+
+  ];
+
+  // === DANGEROUS / SCAM PATTERNS ===
+  const dangerousPatterns = [ 
+    {
+      keywords: ["otp", "verification", "code", "verify here", "secure your account", "login attempt", "enter code"],
+      label: "OTP & Verification Scam",
+      status: "Dangerous",
+      description: "Scammers often create fake verification prompts with fake OTPs to steal your accounts.",
+      solution: "Never share OTPs with anyone. Always verify through trusted official channels."
+    },
+    {
+    keywords: ["paypal", "account limited", "verify now", "security alert", "login attempt", "new device", "contact paypal support"],
+    label: "Phishing Scam",
+    status: "Dangerous",
+    description: "This is a phishing attempt designed to steal your PayPal credentials by tricking you into verifying your identity through a fake link.",
+    solution: "Do not click on any links. Always verify by logging into PayPal directly through the official website."
+    },
+    {
+    keywords: ["netflix", "subscription", "renewed", "billing details", "update payment information", "avoid renewal", "suspend account", "click the link"],
+    label: "Netflix Subscription Phishing Scam",
+    status: "Dangerous",
+    description: "This is a phishing attempt trying to steal your payment information by pretending to be a Netflix subscription renewal notice.",
+    solution: "Do not click on any links. Always verify by logging into Netflix directly through the official website."
+    },
+    {
+      keywords: [".biz", ".ru", ".net", ".co", "cloud-drivez", "maliciousdomain", "suspiciouslink", "download invoice"],
+      label: "Suspicious Link / Malware Delivery",
+      status: "Dangerous",
+      description: "The message may direct you to a malicious website or initiate a malware download.",
+      solution: "Avoid clicking on any suspicious links, especially from unknown domains. Run an antivirus scan if necessary."
+    },
+    {
+      keywords: ["remote job", "quickstartcareer", "job offer", "selected for job", "earn $500/day", "work from home", "apply here", "contract attached", "sign digitally", "send back completed form"],
+      label: "Fake Job Offer Scam",
+      status: "Dangerous",
+      description: "This is a fake job offer scam designed to lure you into sharing personal information or downloading malicious files.",
+      solution: "Do not download attachments or sign documents from unsolicited job offers."
+    },
+    {
+      keywords: ["crypto", "btc wallet", "elon musk", "free eth", "spacexcrypto", "send btc", "join here"],
+      label: "Crypto Giveaway Scam",
+      status: "Dangerous",
+      description: "These scams promise cryptocurrency giveaways but aim to steal funds.",
+      solution: "Never send cryptocurrency, especially for 'free' offers. Verify through trusted channels."
+    },
+    {
+      keywords: ["system is infected", "viruses detected", "call support", "contact us immediately", "security team", "your account is at risk", "tech support", "support center"],
+      label: "Tech Support Scam",
+      status: "Dangerous",
+      description: "This is a tech support scam trying to scare you into calling fake support numbers and potentially compromising your personal information.",
+      solution: "Do not call the number provided. Always use official support channels."
+    },
+    {
+      keywords: ["ceo", "urgent transfer", "gift cards", "send codes", "impersonation", "money transfer", "payment request"],
+      label: "Social Engineering / CEO Fraud",
+      status: "Dangerous",
+      description: "Scammers impersonate trusted figures to manipulate you into sending money or gift cards.",
+      solution: "Always verify via a separate communication channel before transferring funds."
+    },
+    {
+      keywords: ["suspicious debit", "banking-alerts", "confirm now", "account blocked", "login required", "verify account"],
+      label: "Banking Scam",
+      status: "Dangerous",
+      description: "Fake messages mimic banks or payment services to steal your login details or money.",
+      solution: "Never click on links from emails or texts. Log in directly through the bank’s website."
+    },
+    {
+      keywords: ["won", "prize", "gift card", "lottery", "claim now", "insta-giveaway", "free iphone", "free prize"],
+      label: "Prize or Lottery Scam",
+      status: "Dangerous",
+      description: "These scams promise large rewards to harvest your personal data or money.",
+      solution: "Ignore unsolicited prize offers and report any suspicious messages."
+    },
+    {
+      keywords: ["miss you", "love you", "send money", "gift card", "steam card", "amazon voucher", "romance scam", "itunes card", "pay you back", "flight ticket", "help me just this once", "really want to see you"],
+      label: "Romance / Dating Scam",
+      status: "Dangerous",
+      description: "Scammers often use emotional manipulation to convince victims to send money, gift cards, or personal information under the guise of a romantic relationship.",
+      solution: "Do not send money or gift cards. If someone you haven’t met in person asks for financial help, it’s likely a scam. Report and block the sender."
+    },
+    {
+      keywords: ["love you", "send money", "flight tickets", "gift card", "romance scam", "send itunes card", "catfishing"],
+      label: "Romance / Dating Scam",
+      status: "Dangerous",
+      description: "Scammers use emotional manipulation to trick you into sending money or gift cards.",
+      solution: "Never send money to someone you’ve just met online. Report suspicious requests."
+    },
+    {
+      keywords: ["investment opportunity", "double your money", "minimal risk", "fantastic returns", "get rich quick", "financial opportunity"],
+      label: "Investment Scam",
+      status: "Dangerous",
+      description: "This message lures you into investment scams with promises of unrealistic returns.",
+      solution: "Be cautious. Always research and verify investment opportunities before committing funds."
+    },
+    {
+      keywords: ["amazon", "order", "track the package", "processed", "shipped", "delivery", "cancel the order", "click the link", ".com", ".biz", ".ru"],
+      label: "Amazon Phishing Scam",
+      status: "Dangerous",
+      description: "This is a phishing attempt trying to impersonate Amazon's delivery notifications to steal personal information.",
+      solution: "Do not click on any links. Always verify orders directly through your Amazon account."
+    },
+    {
+      keywords: ["job offer", "selected for job", "fill out necessary forms", "hr team", "offer letter", "confirm job", "work from home", "apply here", "send completed form", "digital signature"],
+      label: "Fake Job Offer Scam",
+      status: "Dangerous",
+      description: "This is a fake job offer scam designed to lure you into sharing personal information or downloading malicious files.",
+      solution: "Do not download attachments or sign documents from unsolicited job offers."
+    },
+    {
+      keywords: ["bank", "verify your details", "unauthorized access", "suspension", "verify now", "click the link", ".com", ".biz", ".ru"],
+      label: "Banking Phishing Scam",
+      status: "Dangerous",
+      description: "This is a phishing attempt trying to steal your banking details by impersonating your bank's communication.",
+      solution: "Do not click on any links. Always verify by logging into your bank's official website."
+    },
+    {
+      keywords: ["payment issue", "payment details", "resolve the issue", "click the link", "service disruption", "payment failed", "provide payment information", "act quickly"],
+      label: "Payment Issue Scam",
+      status: "Dangerous",
+      description: "This is a phishing attempt designed to steal your payment details by impersonating a service provider.",
+      solution: "Do not click on any links. Always verify payment issues directly with the official platform."
+    },
+    {
+      keywords: ["whatsapp", "promo group", "join now", ".biz", "free netflix", "netflix promo", "official promo", "gift card", "limited offer", "expires soon"],
+      label: "Messaging App Scam",
+      status: "Dangerous",
+      description: "Scammers impersonate popular brands and use messaging platforms like WhatsApp to lure victims into joining fake groups or clicking malicious links.",
+      solution: "Avoid clicking on such links. Always verify offers through the official website or app of the service."
+    },
+    {
+      keywords: ["invoice due", "payment of", "amount due", "remit payment", "payment within", "accounts department", "securepay solutions", "invoice number", "download the invoice", "secure-docz.net"],
+      label: "Invoice Scam",
+      status: "Dangerous",
+      description: "This email impersonates a legitimate company, demanding payment for a fake invoice and directing you to a potentially malicious link.",
+      solution: "Do not click on any links or download attachments. Verify the invoice's authenticity by contacting the company directly using official contact information."
+    },
+    {
+      keywords: ["irs", "legal action pending", "warrant will be issued", "taxpayer", "unpaid taxes", "irs compliance", "asset seizure", "arrest", "settle your balance"],
+      label: "Fake Government Alert / Tax Scam",
+      status: "Dangerous",
+      description: "This is a tax scam impersonating the IRS or other government agencies to scare recipients into paying fake tax debts.",
+      solution: "Do not click on any links or respond. The IRS will never contact you this way. Report the email to phishing@irs.gov."
+    }
+
+
+
+  ];
+
+  // === COMBINED PATTERNS AND MATCHING LOGIC ===
+  // Combine safe patterns first and then dangerous patterns.
+ // === COMBINED PATTERNS ===
+ const combinedPatterns = [...safePatterns, ...dangerousPatterns];
+
+// === Helper function for keyword matching (with regex for flexibility) ===
+function matchPattern(pattern, text) {
+  let score = 0;
+  for (let keyword of pattern.keywords) {
+    // Use regex for more robust keyword matching (case insensitive)
+    const regex = new RegExp("\\b" + keyword + "\\b", "i");
+    if (regex.test(text)) {
+      score++;
+      console.log(`Matched keyword: ${keyword}`);  // Debugging: log matched keywords
+    }
+  }
+  return score;
+}
+
+// === Analyze Input ===
+let maxScore = 0;
+let matchedPattern = null;
+
+for (let pattern of combinedPatterns) {
+  const score = matchPattern(pattern, input);
+  if (score > maxScore) {
+    maxScore = score;
+    matchedPattern = pattern;
+  }
+}
+
+// === Decide Result Based on Matching Score ===
+if (matchedPattern) {
+  // Lower the threshold to 1 for debugging (this will help you see if any pattern is matching)
+  if (maxScore >= 1) {  // Adjust threshold to 1 for testing
+    status = matchedPattern.status;
+    threatType = matchedPattern.label;
+    description = matchedPattern.description;
+    solution = matchedPattern.solution;
+  } else {
+    status = "Unknown";
+    threatType = "Undetermined";
+    description = "Not enough context to determine threat.";
+    solution = "Please provide more detailed information.";
+  }
+}
+
+// === Output the Result ===
+resultBox.innerHTML = `
+  <h3>Analysis Result</h3>
+  <p><strong>Status:</strong> ${status}</p>
+  <p><strong>Threat Type:</strong> ${threatType}</p>
+  <p><strong>Description:</strong> ${description}</p>
+  <p><strong>Suggested Action:</strong> ${solution}</p>
+`;
+}
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css"> <!-- Main styles -->
+    <style>
+        /* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles (same across all pages) */
+header {
+    background-color: #2b2d42;
+    padding: 10px 10px;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    background-color: #ff4757; /* Red hover effect */
+}
+
+/* Protection Section Hero */
+.protection-hero {
+    background-color: #2b2d42;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+}
+
+.protection-hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.protection-hero p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Protection Content Section */
+.protection-content {
+    padding: 60px 20px;
+    background-color: #f7f7f7;
+}
+
+.protection-content .container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: left;
+}
+
+.protection-content h3 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: #2b2d42;
+}
+
+.protection-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    color: #555;
+}
+
+/* Footer styles (same across all pages) */
+footer {
+    background-color: #2b2d42;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .protection-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .protection-content p {
+        font-size: 1rem;
+    }
+}
+
+    </style>
+    <title>Protection - Cyber Security Awareness</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="threats.html">Threats</a></li>
+                <li><a href="protection.html" class="active">Protection</a></li>
+                <li><a href="laws.html">Laws</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section class="protection-hero">
+        <div class="container">
+            <h2>Cyber Protection Strategies</h2>
+            <p>Learn how to safeguard your personal and business data from cyber threats.</p>
+        </div>
+    </section>
+
+    <section class="protection-content">
+        <div class="container">
+            <h3>Use Strong Passwords</h3>
+           <p>
+            Using strong passwords is crucial for protecting online accounts and sensitive information. A strong password typically consists of at least 12 characters and includes a mix of uppercase and lowercase letters, numbers, and special symbols. Avoid using easily guessable information, such as names or birthdays. It's also important to use different passwords for different accounts to minimize the impact of a breach. Password managers can help users generate and store complex passwords securely. Additionally, enabling multi-factor authentication (MFA) provides an extra layer of security by requiring additional verification steps beyond just the password.
+           </p>
+            <h3>Enable Two-Factor Authentication</h3>
+            <p>
+                Enabling Two-Factor Authentication (2FA) adds an extra layer of security to online accounts by requiring two forms of verification before granting access. Typically, this involves something you know (like a password) and something you have (like a smartphone or a hardware token). Common methods for 2FA include SMS codes, authentication apps (e.g., Google Authenticator), or biometric verification (like fingerprints). 2FA significantly reduces the risk of unauthorized access, even if a password is compromised. To enhance security, users should enable 2FA on all accounts that offer it and regularly review their account settings to ensure protection.
+            </p>
+            <h3>Keep Software Updated</h3>
+           <p>
+            Keeping software updated is essential for maintaining the security and performance of devices and applications. Software updates often include patches that fix vulnerabilities that attackers could exploit. This applies not only to operating systems but also to applications, browsers, and plugins. Regularly updating ensures that users benefit from the latest security features, bug fixes, and improvements. Enabling automatic updates can simplify this process, but users should also periodically check for updates manually. In addition, using reputable sources for software downloads and being cautious about third-party applications can further protect against security risks associated with outdated software.
+           </p>
+            <h3>Be Cautious of Phishing Scams</h3>
+            <p>
+                Being cautious of phishing scams is vital to protecting personal and sensitive information. Phishing involves deceptive tactics, often through emails or messages, that trick individuals into revealing their passwords, credit card numbers, or other confidential data. These messages may appear to be from trusted sources, such as banks or popular online services, and often create a sense of urgency or fear. To avoid falling victim, users should scrutinize email addresses, avoid clicking on suspicious links, and look for spelling or grammatical errors in communications. Educating oneself about common phishing tactics and verifying requests through official channels can further enhance security against these scams.
+            </p>
+            <h3>Install Antivirus Software</h3>
+            <p>
+                Installing antivirus software is a crucial step in safeguarding devices from malware, viruses, and other cyber threats. Antivirus programs work by scanning files, applications, and incoming data for known malicious signatures and behaviors. They can also provide real-time protection, blocking harmful software before it can cause damage. Regularly updating antivirus software ensures it can detect the latest threats. Additionally, users should perform routine system scans and utilize features like firewalls and phishing protection offered by these programs. While antivirus software significantly enhances security, it should be used alongside safe browsing practices and regular software updates for optimal protection.
+            </p>
+            <h3>Backup Your Data</h3>
+            <p>    
+                Backing up data is essential for protecting against data loss due to hardware failures, cyberattacks, or accidental deletions. Regular backups ensure that critical files, documents, and system settings can be restored quickly in case of an emergency. Users should implement a consistent backup strategy, utilizing both local (external hard drives) and cloud-based solutions to provide redundancy. The 3-2-1 backup rule—keeping three copies of data, on two different media, with one copy offsite—can help mitigate risks. Additionally, automating the backup process and regularly testing restore procedures ensures data integrity and availability when needed. By prioritizing data backups, users can minimize the impact of potential data loss.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 CyberSafe. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

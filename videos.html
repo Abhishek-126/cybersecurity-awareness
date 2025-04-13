@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css"> <!-- Main styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2b2d42;
+            padding: 10px 10px;
+            color: #ffffff;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 10px 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 12px;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a.active, nav ul li a:hover {
+            background-color: #ff4757;
+        }
+
+        .video-hero {
+            background-color: #2b2d42;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .video-hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .video-hero p {
+            font-size: 1.1rem;
+            margin-bottom: 0px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .video-section {
+            padding: 40px 20px;
+            background-color: #f7f7f7;
+        }
+
+        .video-section .container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .video-card {
+            background-color: #ffffff;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: scale(1.02);
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .video-card h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .video-card p {
+            font-size: 0.95rem;
+            margin-top: 5px;
+            color: #555;
+        }
+
+        footer {
+            background-color: #2b2d42;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .video-hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <title>Videos - Cyber Security Awareness</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="threats.html">Threats</a></li>
+                <li><a href="protection.html">Protection</a></li>
+                <li><a href="laws.html">Laws</a></li>
+                <li><a href="videos.html" class="active">Videos</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="video-hero">
+        <div class="container">
+            <h2>Cybersecurity Videos</h2>
+            <p>Watch these videos to learn more about online safety and cyber threats.</p>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="container">
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/o0btqyGWIQw" allowfullscreen></iframe>
+                <h3>Phishing Emails</h3>
+                <p>Learn how to spot phishing emails and avoid falling for scams.</p>
+            </div>
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/NMYbkzjI5EY" allowfullscreen></iframe>
+                <h3>What is Malware?</h3>
+                <p>An introduction to malware and how it affects systems.</p>
+            </div>
+    
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/HOntUrG655U&t=315s" allowfullscreen></iframe>
+                <h3>Online Scams To Avoid</h3>
+                <p>Learn how to avoid scams while shopping or using online services.</p>
+            </div>
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/Ip-u5NZJiwY" allowfullscreen></iframe>
+                <h3>What is a Computer Virus?</h3>
+                <p>Understanding how computer viruses work and how they spread.</p>
+            </div>
+    
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/YvBwDVv98YI" allowfullscreen></iframe>
+                <h3>How Credit Card Fraud Happens</h3>
+                <p>Tips on avoiding credit card fraud and protecting your financial data.</p>
+            </div>
+    
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/lIsWpCMBxHQ" allowfullscreen></iframe>
+                <h3>What is Ransomware?</h3>
+                <p>How ransomware encrypts files and demands a ransom to unlock them.</p>
+            </div>
+    
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/5v-Sb0-ys90" allowfullscreen></iframe>
+                <h3>What is Cyberstalking?</h3>
+                <p>Discover how cyberstalking works and the steps to protect yourself.</p>
+            </div>
+    
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/kDFeSUUwRnA" allowfullscreen></iframe>
+                <h3>How Identity Theft Happens</h3>
+                <p>Understanding how criminals steal personal information and commit fraud.</p>
+            </div>
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/Fztuohj3Fck" allowfullscreen></iframe>
+                <h3>Identity Theft Prevention Tips</h3>
+                <p>Learn how to protect yourself from identity theft.</p>
+            </div>
+            
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/MdAZPTiy6fQ" allowfullscreen></iframe>
+                <h3>Credit Card Fraud Protection</h3>
+                <p>Learn how to protect your credit card information from fraud.</p>
+            </div>
+            
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/NeUmClyrwBs" allowfullscreen></iframe>
+                <h3>What is a Data Breach?</h3>
+                <p>Understanding what happens during a data breach and how to stay safe.</p>
+            </div>
+            
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/vCvdsO_mAfk" allowfullscreen></iframe>
+                <h3>What is Cyberterrorism?</h3>
+                <p>How cyberterrorism can disrupt security and cause national threats.</p>
+            </div>
+            
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/oyUsZu6ygq8" allowfullscreen></iframe>
+                <h3>What is a Worm in Cyber Security?</h3>
+                <p>How worms spread and infect systems automatically.</p>
+            </div>
+            
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/2la-gGNiywU" allowfullscreen></iframe>
+                <h3>What is a Trojan?</h3>
+                <p>How Trojans disguise themselves to gain access to your system.</p>
+            </div>
+            
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/lIsWpCMBxHQ" allowfullscreen></iframe>
+                <h3>What is Ransomware?</h3>
+                <p>Learn how ransomware encrypts files and demands a ransom.</p>
+            </div>
+            
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/jIyIqjOlqzY" allowfullscreen></iframe>
+                <h3>What is Adware?</h3>
+                <p>Learn how adware tracks your activities and displays ads.</p>
+            </div>
+            
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/jO9lDsNuyv4" allowfullscreen></iframe>
+                <h3>What is a Rootkit?</h3>
+                <p>Learn how rootkits grant hidden access to cyber attackers.</p>
+            </div>
+            
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/Yz0PnAkeRiI" allowfullscreen></iframe>
+                <h3>Phishing Scams Explained</h3>
+                <p>How phishing attacks trick users and how to avoid them.</p>
+            </div>
+            
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/uvKTMgWRPw4" allowfullscreen></iframe>
+                <h3>What is Social Engineering?</h3>
+                <p>How attackers manipulate people into revealing sensitive information.</p>
+            </div>
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/Z3pp14oUiA" allowfullscreen></iframe>
+                <h3>What is Spyware?</h3>
+                <p>How spyware secretly monitors and collects your information.</p>
+            </div>
+            
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/XEtvwzN_xJk" allowfullscreen></iframe>
+                <h3>Tips to Avoid Social Engineering</h3>
+                <p>Simple tips to recognize and prevent social engineering attacks.</p>
+            </div>
+            
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/wFP8LIYiamQ" allowfullscreen></iframe>
+                <h3>Cybersecurity Tips</h3>
+                <p>Watch this webinar by CISA on how to protect your identity and stay secure.</p>
+            </div>
+            
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/vLFeO7yjeUU" allowfullscreen></iframe>
+                <h3>OTP Fraud</h3>
+                <p>Tips To Save Yourself From OTP Scams</p>
+            </div>
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/a9Q6wHwdKlo" allowfullscreen></iframe>
+                <h3>Scams & Identity Theft (Teens)</h3>
+                <p>Explains various scams and identity theft in a way teens can understand.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2025 CyberSafe. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

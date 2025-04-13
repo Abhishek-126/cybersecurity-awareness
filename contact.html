@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css"> <!-- Main styles -->
+    <style>
+        /* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles (same across all pages) */
+header {
+    background-color: #2b2d42;
+    padding: 10px 10px;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    background-color: #ff4757; /* Red hover effect */
+}
+
+/* Contact Hero Section */
+.contact-hero {
+    background-color: #2b2d42;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.contact-hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-hero p {
+    font-size: 1.1rem;
+    margin-bottom: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Contact Form Section */
+.contact-form {
+    padding: 40px 20px;
+    background-color: #f7f7f7;
+}
+
+.contact-form .container {
+    max-width: 600px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #2b2d42;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #ff4757;
+}
+
+/* Footer styles (same across all pages) */
+footer {
+    background-color: #2b2d42;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form .container {
+        padding: 15px;
+    }
+
+    .contact-hero h2 {
+        font-size: 2rem;
+    }
+}
+
+    </style>
+    <title>Contact Us - Cyber Security Awareness</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="threats.html">Threats</a></li>
+                <li><a href="protection.html">Protection</a></li>
+                <li><a href="laws.html">Laws</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-hero">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions or need help? Get in touch with us using the form below!</p>
+        </div>
+    </section>
+
+    <section class="contact-form">
+        <div class="container">
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 CyberSafe. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

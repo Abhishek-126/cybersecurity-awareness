@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css"> <!-- Main styles -->
+    <style>
+        /* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles (same across all pages) */
+header {
+    background-color: #2b2d42;
+    padding: 10px 10px;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    background-color: #ff4757; /* Red hover effect */
+}
+
+/* Threats Section Hero */
+.threats-hero {
+    background-color: #2b2d42;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+}
+
+.threats-hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.threats-hero p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Threats Content Section */
+.threats-content {
+    padding: 60px 20px;
+    background-color: #f7f7f7;
+}
+
+.threats-content .container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: left;
+}
+
+.threats-content h3 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: #2b2d42;
+}
+
+.threats-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    color: #555;
+}
+
+/* Footer styles (same across all pages) */
+footer {
+    background-color: #2b2d42;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .threats-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .threats-content p {
+        font-size: 1rem;
+    }
+}
+
+    </style>
+    <title>Threats - Cyber Security Awareness</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="threats.html" class="active">Threats</a></li>
+                <li><a href="protection.html">Protection</a></li>
+                <li><a href="laws.html">Laws</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section class="threats-hero">
+        <div class="container">
+            <h2>Cyber Threats</h2>
+            <p>Understanding the various cyber threats and how to protect yourself.</p>
+        </div>
+    </section>
+
+    <section class="threats-content">
+        <div class="container">
+            <h3>Phishing</h3>
+            <p>
+                Phishing is a cyber attack where attackers impersonate legitimate organizations to trick individuals into revealing sensitive information, such as passwords and credit card details. This is often done through deceptive emails, messages, or fake websites that appear authentic. Common types of phishing include spear phishing (targeting specific individuals) and whaling (targeting high-profile individuals). To protect against phishing, users should verify the sender's identity, avoid clicking on suspicious links, and enable multi-factor authentication. Regular training on recognizing phishing attempts can also enhance security awareness.        
+            </p>
+            <h3>Ransomware</h3>
+           <p>
+            Ransomware is a type of malicious software that encrypts a victim's files or entire system, rendering them inaccessible until a ransom is paid to the attacker. It often spreads through phishing emails, malicious downloads, or unsecured networks. Once the system is infected, a ransom note typically appears, demanding payment in cryptocurrency for decryption keys. To protect against ransomware, users should regularly back up data, keep software updated, and use reputable antivirus solutions. Awareness and employee training on recognizing potential threats can also significantly reduce the risk of infection.
+           </p>
+            <h3>Malware</h3>
+           <p>
+            Malware, short for malicious software, refers to a variety of harmful programs designed to infiltrate, damage, or exploit computer systems without the user's consent. It includes viruses, worms, trojans, ransomware, and spyware, each with different functions and methods of infection. Malware can be spread through infected downloads, email attachments, or compromised websites. Once installed, it can steal personal information, corrupt files, or take control of devices. To combat malware, users should install antivirus software, keep their systems updated, and practice safe browsing habits. Regular backups also help minimize data loss in case of an attack.
+           </p>
+            <h3>Man-in-the-Middle Attacks</h3>
+            <p>
+                Man-in-the-Middle (MitM) attacks occur when a malicious actor intercepts and alters communications between two parties without their knowledge. This can happen in various scenarios, such as unsecured Wi-Fi networks or compromised routers. Attackers can eavesdrop on sensitive information, manipulate data, or inject malicious content into the conversation. Common techniques include packet sniffing, session hijacking, and SSL stripping. To protect against MitM attacks, users should avoid public Wi-Fi for sensitive transactions, use VPNs, and ensure websites use HTTPS for secure communications. Implementing multi-factor authentication also adds an extra layer of security.
+            </p>
+            <h3>Social Engineering</h3>
+            <p>
+                Social engineering is a manipulation technique that exploits human psychology to gain confidential information or unauthorized access to systems. It often involves tricking individuals into divulging personal data, such as passwords or bank details, by creating a sense of urgency or trust. Common social engineering tactics include phishing emails, pretexting (fabricating a story to obtain information), and baiting (offering something enticing to lure victims). To mitigate risks, organizations should conduct regular security awareness training, promote skepticism regarding unsolicited requests, and implement strict verification processes. Building a security-conscious culture can help reduce susceptibility to these tactics.
+            </p>
+            <h3>Denial-of-Service (DoS) Attacks</h3>
+            <p>
+                Denial-of-Service (DoS) attacks aim to make a service unavailable by overwhelming it with excessive requests or traffic, rendering it unable to respond to legitimate users. Attackers may use various methods, such as flooding the target with packets, exploiting vulnerabilities, or consuming resources. In a Distributed Denial-of-Service (DDoS) attack, multiple compromised devices are used to amplify the attack, making it more challenging to mitigate. DoS attacks can disrupt business operations, damage reputations, and lead to financial losses. To protect against such attacks, organizations can employ traffic filtering, rate limiting, and use DDoS protection services to ensure availability and resilience.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 CyberSafe. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
